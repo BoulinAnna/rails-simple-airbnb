@@ -64,3 +64,7 @@ group :test do
 end
 gem 'rspec-rails', group: [ :test ]
 gem 'rails-controller-testing', group: [ :test ]
+
+gem "sassc-rails", "~> 2.1"
+gem "geocoder"
+gem "dotenv-rails"

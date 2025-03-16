@@ -1,15 +1,17 @@
-<h1>All our Flats (<%= @flats.count %>)</h1>
-  <%= link_to "Add a flat", new_flat_path, class: "btn btn-primary" %>
+<div class="container">
+  <h1>All our Flats (<%= @flats.count %>)</h1>
+    <%= link_to "Add a flat", new_flat_path, class: "btn btn-primary" %>
 
-<div class="flats-container">
-
-  <% @flats.each do |flat| %>
-    <div class="flat-card">
-      <h2><%= flat.name %></h2>
-      <p><%= flat.address %></p>
-      <p> <i class="fa-solid fa-euro-sign"><%= flat.price_per_night %></i> </p>
-      <p><i class="fa-solid fa-user-group"></i><%= flat.number_of_guests %></p>
-      <%= link_to "More info", flat_path(flat), class: "btn btn-primary" %>
-
-    </div>
-  <%end %>
+  <div class="flats-container">
+    <div class="row">
+      <% @flats.each do |flat| %>
+        <div class="flat-card">
+          <h2><%= link_to flat.name, flat_path(flat)  %></h2>
+          <p><%= flat.address %></p>
+          <p> <i class="fa-solid fa-euro-sign"><%= flat.price_per_night %></i> </p>
+          <p><i class="fa-solid fa-user-group"></i><%= flat.number_of_guests %></p>
+          <%= link_to "More info", flat_path(flat), class: "btn btn-primary" %>
+        </div>
+     <%end %>
+  </div>
+</div>

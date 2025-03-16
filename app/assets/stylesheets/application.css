@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap";
+  @import "form";
+  @import "header-container-btn-add";
+  @import url('https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css');
+  @import "flats-container";

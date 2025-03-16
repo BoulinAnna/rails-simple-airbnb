@@ -1,10 +1,19 @@
 class FlatsController < ApplicationController
-  def index # afficher tous les apparts
+
+  def index
     @flats = Flat.all
   end
 
-  def show # afficher un appart spécifique
+  def show
     @flat = Flat.find(params[:id])
+    @markers = [
+      {
+        lat: @flat.latitude,
+        lng: @flat.longitude
+      }
+    ]
+    puts "🚀 Markers envoyés par Rails : #{@markers.to_json}"
+
   end
 
   def new

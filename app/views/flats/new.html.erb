@@ -1,16 +1,21 @@
-<div class="flats-container">
-  <div class="row">
-    <div class="col">
+<div class="container">
+  <div class="form-container">
+    <div class="header-container-btn-add">
       <h1>Add a new Flat</h1>
+      <%= link_to "Add Flat", new_flat_path, class: "btn btn-primary" %>
+    </div>
+
       <%= simple_form_for @flat do |f| %>
         <%= f.input :name %>
         <%= f.input :address %>
         <%= f.input :description %>
         <%= f.input :number_of_guests %>
         <%= f.input :price_per_night %>
-        <%= f.submit "create flat", class: "btn btn-primary" %>
-        <%= link_to "Cancel", flats_path, class: "btn btn-danger"  %>
+
+        <div class="form-container">
+          <%= f.submit "create flat", class: "btn btn-primary" %>
+          <%= link_to "Cancel", flats_path, class: "btn btn-danger"  %>
+        </div>
       <% end %>
     </div>
-  </div>
 </div>
